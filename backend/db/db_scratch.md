@@ -9,6 +9,12 @@ npx sequelize-cli model:generate --name Beer --attributes name:string,descriptio
 
 npx sequelize-cli model:generate --name Review --attributes rating:numeric,review:text,userId:integer,beerId:integer
 
+npx sequelize seed:generate --name seed_breweries
+
+npx sequelize seed:generate --name seed_beers
+
+npx sequelize seed:generate --name seed_reviews
+
 npx dotenv sequelize db:migrate
 
 npx dotenv sequelize db:migrate:undo:all
