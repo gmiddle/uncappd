@@ -1,11 +1,6 @@
-- npx dotenv sequelize db:migrate:undo
-- npx dotenv sequelize db:migrate
+## Sequelize commands
 
-
-- npx dotenv sequelize db:seed:undo:all
-- npx dotenv sequelize db:seed:all
-
-
+```bash
 npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string,hashedPassword:string,userName:string,profilePic:text
 
 npx sequelize-cli model:generate --name Brewery --attributes name:string,city:string,state:string,breweryPic:text
@@ -25,3 +20,24 @@ npx dotenv sequelize db:seed:undo:all
 npx dotenv sequelize db:drop
 
 npx dotenv sequelize db:create
+```
+
+## Combined Code for drop/migrate/seed
+
+local reset only
+
+```bash
+npx dotenv sequelize db:drop && npx dotenv sequelize db:create && npx dotenv sequelize db:migrate && npx dotenv sequelize db:seed:all
+```
+
+Heroku reset
+
+```bash
+npx dotenv sequelize db:seed:undo:all && npx dotenv sequelize db:migrate:undo:all && npx dotenv sequelize db:migrate && npx dotenv sequelize db:seed:all
+```
+
+Seed only reset
+
+```bash
+npx dotenv sequelize db:seed:undo:all && npx dotenv sequelize db:seed:all
+```
