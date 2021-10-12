@@ -25,7 +25,9 @@ module.exports = {
         type: Sequelize.STRING
       },
       breweryId: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: { model: "Breweries" }
       },
       createdAt: {
         allowNull: false,

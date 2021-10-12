@@ -13,3 +13,15 @@ npx sequelize-cli model:generate --name Brewery --attributes name:string,city:st
 npx sequelize-cli model:generate --name Beer --attributes name:string,description:string,abv:integer,ibu:integer,beerImg:text,breweryId:integer
 
 npx sequelize-cli model:generate --name Review --attributes rating:numeric,review:text,userId:integer,beerId:integer
+
+npx dotenv sequelize db:migrate
+
+npx dotenv sequelize db:migrate:undo:all
+
+npx dotenv sequelize db:seed:all
+
+npx dotenv sequelize db:seed:undo:all
+
+npx dotenv sequelize db:drop
+
+npx dotenv sequelize db:create

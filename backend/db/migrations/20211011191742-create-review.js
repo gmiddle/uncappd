@@ -9,16 +9,21 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       rating: {
-        type: Sequelize.NUMERIC
+        allowNull: false,
+        type: Sequelize.NUMERIC(2, 1)
       },
       review: {
-        type: Sequelize.TEXT
+        type: Sequelize.STRING(2000)
       },
       userId: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: { model: "Users" }
       },
       beerId: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: { model: "Beers" }
       },
       createdAt: {
         allowNull: false,
