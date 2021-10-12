@@ -9,10 +9,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING(80)
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(750)
       },
       abv: {
         type: Sequelize.INTEGER
@@ -21,7 +22,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       beerImg: {
-        type: Sequelize.TEXT
+        type: Sequelize.STRING
       },
       breweryId: {
         type: Sequelize.INTEGER
