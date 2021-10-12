@@ -12,7 +12,7 @@ function randomBreweries() {
     "Heineken",
     "Anheuser Busch",
     "Coors",
-    "Corona",
+    "Cerveceria Modelo",
     "Miller",
     "Tree House Brewing",
     "Fremont Brewing",
@@ -29,11 +29,13 @@ function randomBreweries() {
 
 const breweries = [];
 
-for (let i = 0; i <= 50; i++) {
+for (let i = 0; i <= 30; i++) {
   let newBrewery = {
     name: `${randomBreweries()}`,
     city: faker.address.city(),
     state: faker.address.stateAbbr(),
+    createdAt: faker.date.past(1),
+    updatedAt: new Date()
   };
   breweries.push(newBrewery);
 };

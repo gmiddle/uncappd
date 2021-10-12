@@ -16,7 +16,7 @@ module.exports = {
         type: Sequelize.STRING(750)
       },
       abv: {
-        type: Sequelize.INTEGER
+        type: Sequelize.NUMERIC(2, 1)
       },
       ibu: {
         type: Sequelize.INTEGER

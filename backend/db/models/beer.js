@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const Beer = sequelize.define('Beer', {
     name: DataTypes.STRING,
     description: DataTypes.STRING,
-    abv: DataTypes.INTEGER,
+    abv: DataTypes.NUMERIC(2, 1),
     ibu: DataTypes.INTEGER,
     beerImg: DataTypes.TEXT,
     breweryId: DataTypes.INTEGER
