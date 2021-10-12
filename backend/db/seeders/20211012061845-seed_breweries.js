@@ -7,41 +7,43 @@ function getRandomNum(min, max) {
 
 function randomBreweries() {
   const breweryNames = [
-    "Founders",
-    "Structures",
+    "Founders Brewing",
+    "Structures Brewing",
     "Heineken",
     "Anheuser Busch",
     "Coors",
+    "Corona",
     "Miller",
     "Tree House Brewing",
     "Fremont Brewing",
     "Trillium Brewing",
-    "Lawson's Finest Liquids"
-
-  ]
+    "Lawson's Finest Liquids",
+    "Peticolas Brewing",
+    "Firestone Walker",
+    "Bells Brewing",
+    "Old Nation Brewing",
+  ];
+  let breweryNum = getRandomNum(0, breweryNames.length);
+  return breweryNames[breweryNum];
 }
+
+const breweries = [];
+
+for (let i = 0; i <= 50; i++) {
+  let newBrewery = {
+    name: `${randomBreweries()}`,
+    city: faker.address.city(),
+    state: faker.address.stateAbbr(),
+  };
+  breweries.push(newBrewery);
+};
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.bulkInsert('People', [{
-        name: 'John Doe',
-        isBetaMember: false
-      }], {});
-    */
+    return queryInterface.bulkInsert('Breweries', breweries, {});
   },
 
   down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.bulkDelete('People', null, {});
-    */
+    return queryInterface.bulkDelete('Breweries', null, {});
   }
 };
