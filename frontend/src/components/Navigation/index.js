@@ -46,6 +46,7 @@ function Navigation({ isLoaded }){
                 <div className="home-container">
                     <NavLink className="home-button" exact to="/">
                         <img className="logoImg" src="https://res.cloudinary.com/dxo7djnid/image/upload/v1634081657/uncappd/uncappd_logo_smyrkl.svg" alt="" />
+                        {/* <img className="logoImg" src="https://res.cloudinary.com/dxo7djnid/image/upload/v1634098191/uncappd/uncappd_logo_dnj6ne.gif" alt="" /> */}
                     </NavLink>
                 </div>
                     <div className="nav-button">
