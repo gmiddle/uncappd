@@ -9,7 +9,7 @@ import BeerCard from "../BeerCard";
 const BeersPage = ({isLoaded}) => {
     const history = useHistory();
     const sessionUser = useSelector(state => state.session.user);
-    const beers = useSelector(state => state.drinks.drinkList);
+    const beers = useSelector(state => state.beers.beerList);
     const dispatch = useDispatch();
 
     useEffect(() => {
