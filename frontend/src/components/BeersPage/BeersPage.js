@@ -32,7 +32,7 @@ const BeersPage = ({isLoaded}) => {
         <>
             <div className="beers-main" />
             <Navigation isLoaded={isLoaded} />
-            <div>
+            <div className="beers-feed-container">
                 <div id="beers-upper"></div>
                 <h1 className="beers-title" id="beers-main">Beers</h1>
                 <div className="beers-divider"></div>

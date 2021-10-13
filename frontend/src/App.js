@@ -5,6 +5,7 @@ import { fetchBeers } from "./store/beers";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import BeersPage from "./components/BeersPage";
 
 function App() {
   const dispatch = useDispatch();
