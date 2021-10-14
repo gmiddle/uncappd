@@ -14,6 +14,9 @@ function App() {
   
   useEffect(() => {
     dispatch(sessionActions.restoreUser())
+    // .then(() => dispatch(fetchEmails()))
+    // .then(() => dispatch(fetchUsernames()))
+    // .then(() => dispatch(fetchUsers()))
     .then(() => dispatch(fetchBeers()))
     .then(() => setIsLoaded(true));
   }, [dispatch]);

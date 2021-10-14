@@ -5,10 +5,13 @@ export const BeerSelectedContext = createContext();
 // TODO - setCurrentBeer, setShowReviewModal, setPrevHost?
 export const BeerSelectedProvider = ({ children }) => {
     const [ beerSelected, setBeerSelected ] = useState(false);
+    const [ currentBeer, setCurrentBeer ] = useState(false);
+
     
     return (
         <BeerSelectedContext.Provider value={{
-            beerSelected, setBeerSelected
+            beerSelected, setBeerSelected,
+            currentBeer, setCurrentBeer
         }}>
             { children }
         </BeerSelectedContext.Provider>

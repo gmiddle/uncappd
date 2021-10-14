@@ -57,7 +57,7 @@ background-color: rgb(182, 182, 182);
 margin-bottom: 1.875rem;
 } */
 
-/* .newBeers-card {
+.newBeers-card {
 height: 11.813rem;
 width: 38.75rem;
 border: 2px dashed #a1a1a1;
@@ -85,7 +85,7 @@ color: rgb(133, 133, 133);
 background-color: rgb(230, 230, 230);
 cursor: pointer;
 transform: scale(1.02);
-} */
+}
 
 
 /* .github-logo {

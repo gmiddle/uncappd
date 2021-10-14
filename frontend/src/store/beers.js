@@ -43,9 +43,11 @@ export const createBeer = (beer) => async dispatch => {
     const response = await fetch('api/beers', {
         method: 'POST',
         headers: {
-            "Content-Type":"multipart/form-data"
+            // "Content-Type":"multipart/form-data"
+            "Content-Type":"application/json"
         },
-        body: formData
+        // body: formData
+        body: JSON.stringify(beer)
     })
 
     if(response.ok) {

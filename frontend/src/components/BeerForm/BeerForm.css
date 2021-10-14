@@ -1,0 +1,98 @@
+.new-beer-body {
+    /* background-image: url('https://cdn.discordapp.com/attachments/886336420552269847/888612947096637480/unknown.png'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+    padding-top: 6.25em;
+}
+
+.form-container {
+box-shadow: 4px 4px 4px rgba(104, 104, 104, 0.25);
+border: 1px solid;
+border-radius: 3px;
+height: fit-content;
+width: fit-content;
+margin: 0 auto;
+margin-top: 5.125em;
+padding: 1.25em;
+background-color: white;
+}
+
+.new-beer-form {
+height: fit-content;
+width: fit-content;
+display: flex;
+flex-direction: column;
+}
+
+.beer-errors {
+list-style-type: none;
+color: red;
+background-color: rgb(255, 213, 213);
+padding: 0.625em;
+}
+
+.go-back {
+color: blue;
+}
+
+.go-back:hover {
+text-decoration: underline;
+cursor: pointer;
+}
+
+.new-beer-input {
+margin-top: 1.25em;
+}
+
+.beer-name {
+width: 18.75rem;
+height: 3.125rem;
+margin: 0;
+margin-top: 1.25em;
+}
+
+.beer-description {
+border: 1px solid;
+width: 18.75rem;
+height: 12.5rem;
+padding: 0.625em;
+resize: none;
+}
+
+.beer-abv {
+width: 5rem;
+height: 1.875rem;
+}
+
+.abv-label-text {
+position: relative;
+right: 2.188rem;
+}
+
+.new-beer-image {
+width: 20rem;
+margin-top: 0.625em;
+padding-left: 0;
+border: 0;
+border-radius: 3px;
+}
+
+.new-beer-button {
+border: 1px solid;
+height: 1.875rem;
+/* background-color: #dc8c66;
+color: white; */
+color: black;
+border-radius: 3px;
+}
+
+.new-beer-button:hover {
+background-color: gray;
+color: white;
+cursor: pointer;
+}
+  

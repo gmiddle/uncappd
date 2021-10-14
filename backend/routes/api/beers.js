@@ -24,7 +24,7 @@ const validateBeer = [
     //     .withMessage('ABV must be between 0.0 and 9.9'),
     // TODO add API routes for IBU and breweryId's
     // check("IBU")
-    // check("breweryId")
+    // check("breweryId") 
     handleValidationErrors
 ];
 
@@ -45,9 +45,10 @@ const fileExists = (req, res, next) => {
 router.post('/',
     fileExists,
     // AWS integration?
-    validateBeer,
+    // validateBeer,
     asyncHandler(async (req,res) => {
         const { name, description, abv, ibu, beerImg } = req.body;
+        console.log("this is the name and desc---------", name, description)
         // AWS integration?
         const newBeer = await Beer.create({
             name,

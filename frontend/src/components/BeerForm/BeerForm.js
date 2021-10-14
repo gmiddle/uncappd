@@ -27,10 +27,10 @@ function BeerForm({ beer }) {
         return null;
     }
 
-    const updateFile = (e) => {
-        const file = e.target.files[0];
-        if (file) setBeerImg(file);
-    }
+    // const updateFile = (e) => {
+    //     const file = e.target.files[0];
+    //     if (file) setBeerImg(file);
+    // }
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -72,7 +72,7 @@ function BeerForm({ beer }) {
                             <li key={error}>{error}</li>
                         ))}
                     </ul>}
-                    <label htlFor="beerName">
+                    <label htmlFor="beerName">
                         <input
                             className="new-beer-input beer-name"
                             type="text"
@@ -81,9 +81,45 @@ function BeerForm({ beer }) {
                             placeholder="Beer Name"
                             onChange={(e) => setBeerName(e.target.value)} 
                         />
-
+                    </label>
+                    <label htmlFor="description">
+                        <textarea 
+                            className="new-beer-input beer-description"
+                            type="text" 
+                            id="description" 
+                            value={description} 
+                            placeholder="Description"
+                            onChange={(e) => setDescription(e.target.value)} 
+                        />
+                    </label>
+                    <label htmlFor="abv">
+                        <input 
+                            className="new-beer-input beer-abv"
+                            type="number" 
+                            id="abv" 
+                            value={abv} 
+                            placeholder="ABV"
+                            onChange={(e) => setAbv(e.target.value)} 
+                            step="0.1"
+                            min="0"
+                            max="9.9"
+                        /> <span className="abv-label-text">%</span>
+                    </label>
+                    <label htmlFor="ibu">
+                        <input 
+                            className="new-beer-input beer-ibu"
+                            type="number" 
+                            id="ibu" 
+                            value={ibu} 
+                            placeholder="IBU"
+                            onChange={(e) => setIbu(e.target.value)} 
+                            step="0"
+                            min="1"
+                            max="300"
+                        /> <span className="ibu-label-text">%</span>
                     </label>
 
+                    <button className="new-beer-input new-beer-button">Create</button>
                 </form>
             </div>
 
