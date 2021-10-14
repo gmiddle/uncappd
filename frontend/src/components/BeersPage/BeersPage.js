@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import './BeersPage.css';
 import BeerCard from "../BeerCard";
 
-const BeersPage = ({isLoaded}) => {
+const BeersPage = ({ beer }) => {
     const history = useHistory();
     const sessionUser = useSelector(state => state.session.user);
     const beers = useSelector(state => state.beers.beerList);
@@ -33,14 +33,14 @@ const BeersPage = ({isLoaded}) => {
     return (
         <>
             <div className="beers-main" />
-            <Navigation isLoaded={isLoaded} />
+            {/* <Navigation isLoaded={isLoaded} /> */}
             <div className="beers-feed-container">
                 <div id="beers-upper"></div>
-                <h1 className="beers-title" id="beers-main">Beers</h1>
+                <h1 className="beers-title" id="beers-main">Beers List</h1>
                 <div className="beers-divider"></div>
                 {/* <div onClick={newBeer} className="new-beer-card">
-                    <div className="plus-icon">+</div> */}
-                {/* </div> */}
+                    <div className="plus-icon">+</div>
+                </div> */}
                 {sortedBeers.map(beer => (
                     <BeerCard key={beer.id} beer={beer} />
                 ))}

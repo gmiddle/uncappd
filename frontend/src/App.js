@@ -6,6 +6,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import BeersPage from "./components/BeersPage";
+import BeerForm from "./components/BeerForm";
 
 function App() {
   const dispatch = useDispatch();
@@ -28,8 +29,13 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
+
           <Route path="/beers">
             <BeersPage isLoaded={isLoaded} />
+          </Route>
+
+          <Route path='/new-beer'>
+              <BeerForm isLoaded={isLoaded} />
           </Route>
         </Switch>
       )}

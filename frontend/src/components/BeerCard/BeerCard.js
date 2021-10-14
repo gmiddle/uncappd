@@ -7,12 +7,21 @@ const BeerCard = ({ beer }) => {
     const beerImgRef = useRef();
     const { setBeerSelected } = useBeerSelected();
 
+    // TODO AVG RATING
+    // let avgRating;
+    // const ratingsArray = [];
+    // if(beer.length) {  //TODO - Reviews?
+    //     beer.forEach()
+    // }
+
     useEffect(() => {
         beerImgRef.current.style.backgroundImage = `url(${beer.beerImg})`
     })
 
     const showForm = () => {
         setBeerSelected(true);
+        // setShowReviewModal(true);
+        // setCurrentBeer(beer);
         return    
     }
 
@@ -25,8 +34,8 @@ const BeerCard = ({ beer }) => {
                 <p className="beerCard-description">{beer.description}</p>
                 <div className="beerCard-info">
                     {/* <p className="beerCard-info beerCard-rating-avg">Rating: ${avgRating ? `${avgRating}/5` : 'N/A'}</p> */}
-                    <p className="beerCard-info beerCard-rating-total">Total Ratings: TBC</p>
-                    <p className="beerCard-info beerCard-abv">ABV %: TBC</p>
+                    <p className="beerCard-info beerCard-rating-total">Total Ratings: TBD</p>
+                    <p className="beerCard-info beerCard-abv">ABV %: {beer.abv}</p>
                 </div>
         </div>
         // <img>

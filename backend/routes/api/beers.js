@@ -32,6 +32,7 @@ router.get('/', asyncHandler(async (req,res) => {
     const beers = await Beer.findAll({
         include: Review,
         order: [["createdAt", "DESC"]]
+        //TODO - fix order of beers page
     });
     res.json(beers)
 }))
@@ -44,7 +45,7 @@ const fileExists = (req, res, next) => {
 router.post('/',
     fileExists,
     // AWS integration?
-    // validateBeer,
+    validateBeer,
     asyncHandler(async (req,res) => {
         const { name, description, abv, ibu, beerImg } = req.body;
         // AWS integration?
