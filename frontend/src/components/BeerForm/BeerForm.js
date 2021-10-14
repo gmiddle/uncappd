@@ -22,7 +22,7 @@ function BeerForm({ beer }) {
     //     setShowReviewModal(false);
     // })
 
-    if (sessionUser['user'] === undefined) {
+    if (sessionUser === undefined) {
         history.push('/');
         return null;
     }
