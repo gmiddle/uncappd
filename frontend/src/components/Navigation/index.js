@@ -27,22 +27,33 @@ function Navigation({ isLoaded }){
     } else {
         sessionLinks = (
         <>
-            <button onClick={demoLogin}>
+            <button className="demo-login-button" onClick={demoLogin}>
                 Demo User
             </button>
             <LoginFormModal />
-            <NavLink to="/signup">Sign Up</NavLink>
+            <div className="signup-button-container">
+                <NavLink to="/signup">
+                <button className="signup-button">Sign Up</button>
+                </NavLink>
+            </div>
         </>
         );
     }
 
     return (
-        <ul>
-        <li>
-            <NavLink exact to="/">Home</NavLink>
-            {isLoaded && sessionLinks}
-        </li>
-        </ul>
+        <div className="nav-bar">
+            <div className="nav-container">
+                <div className="home-container">
+                    <NavLink className="home-button" exact to="/">
+                        <img className="logoImg" src="https://res.cloudinary.com/dxo7djnid/image/upload/v1634081657/uncappd/uncappd_logo_smyrkl.svg" alt="" />
+                        {/* <img className="logoImg" src="https://res.cloudinary.com/dxo7djnid/image/upload/v1634098191/uncappd/uncappd_logo_dnj6ne.gif" alt="" /> */}
+                    </NavLink>
+                </div>
+                    <div className="nav-button">
+                        {isLoaded && sessionLinks}
+                    </div>
+            </div>
+        </div>
     );
 }
 
