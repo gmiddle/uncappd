@@ -12,16 +12,16 @@ const validateBeer = [
         .exists({checkFalsy: true})
         .withMessage("Please enter beer name"),
     check('description')
-        // .exists({checkFalsy: true})
+        .exists({checkFalsy: false})
         .withMessage('Please enter a description'),
-    check("abv")
-        // .exists({checkFalsy: true})
-        // .withMessage("Please enter an ABV Percentage Between 0.0 and 9.9")
-        .isFloat({
-            min: 0,
-            max: 9.9
-        })
-        .withMessage('ABV must be between 0.0 and 9.9'),
+    // check("abv")
+    //     // .exists({checkFalsy: true})
+    //     // .withMessage("Please enter an ABV Percentage Between 0.0 and 9.9")
+    //     .isFloat({
+    //         min: 0,
+    //         max: 9.9
+    //     })
+    //     .withMessage('ABV must be between 0.0 and 9.9'),
     // TODO add API routes for IBU and breweryId's
     // check("IBU")
     // check("breweryId")
@@ -44,7 +44,7 @@ const fileExists = (req, res, next) => {
 router.post('/',
     fileExists,
     // AWS integration?
-    validateBeer,
+    // validateBeer,
     asyncHandler(async (req,res) => {
         const { name, description, abv, ibu, beerImg } = req.body;
         // AWS integration?

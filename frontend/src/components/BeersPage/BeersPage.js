@@ -19,14 +19,16 @@ const BeersPage = ({isLoaded}) => {
     const beersArray = Object.values(beers);
     const sortedBeers = beersArray.sort((a, b) => a.id < b.id ? 1 : -1)
 
-    if (sessionUser["user"] === undefined) {
+    console.log("this is the session user ---------------", sessionUser)
+
+    if (sessionUser === undefined) {
         history.push("/");
         return null
     }
 
-    const newBeer = () => {
-        history.push("/new-beer")
-    }
+    // const newBeer = () => {
+    //     history.push("/new-beer")
+    // }
 
     return (
         <>
@@ -36,9 +38,9 @@ const BeersPage = ({isLoaded}) => {
                 <div id="beers-upper"></div>
                 <h1 className="beers-title" id="beers-main">Beers</h1>
                 <div className="beers-divider"></div>
-                <div onClick={newBeer} className="new-beer-card">
-                    <div className="plus-icon">+</div>
-                </div>
+                {/* <div onClick={newBeer} className="new-beer-card">
+                    <div className="plus-icon">+</div> */}
+                {/* </div> */}
                 {sortedBeers.map(beer => (
                     <BeerCard key={beer.id} beer={beer} />
                 ))}
