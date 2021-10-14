@@ -19,7 +19,7 @@ const BeersPage = ({ beer }) => {
     const beersArray = Object.values(beers);
     const sortedBeers = beersArray.sort((a, b) => a.id < b.id ? 1 : -1)
 
-    console.log("this is the session user ---------------", sessionUser)
+    // console.log("this is the session user ---------------", sessionUser)
 
     if (sessionUser === undefined) {
         history.push("/");
