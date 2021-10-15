@@ -17,7 +17,7 @@ const ReviewButton = ({ onOpen }) => {
           onClick={onOpen}
           className="review-button" 
         //   src="/images/review-button.png" 
-          alt="plus symbol for creating a review" 
+          alt="plus symbol" 
         />
       )}
     </>

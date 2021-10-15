@@ -120,7 +120,6 @@ function BeerForm({ beer }) {
                             max="300"
                         /> <span className="ibu-label-text">%</span>
                     </label>
-
                     <button className="new-beer-input new-beer-button">Create</button>
                 </form>
             </div>
