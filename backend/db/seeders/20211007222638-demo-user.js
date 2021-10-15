@@ -11,7 +11,7 @@ const fakeUsers = [
 
 ]
 
-for (let i = 0; i <= 80; i++) {
+for (let i = 0; i <= 20; i++) {
   let newUser = {
     email: faker.internet.email(),
     username: faker.internet.userName(),

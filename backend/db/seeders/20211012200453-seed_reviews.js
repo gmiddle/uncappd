@@ -46,12 +46,12 @@ function randomReviews() {
 
 const reviews = [];
 
-for (let i = 0; i <= 1500; i++) {
+for (let i = 0; i <= 400; i++) {
   let newReview = {
     rating: faker.finance.amount(3.5, 5.0, 1),
     review: `${randomReviews()}`,
-    userId: faker.finance.amount(1, 80, 0),
-    beerId: faker.finance.amount(1, 300, 0),
+    userId: faker.finance.amount(1, 20, 0),
+    beerId: faker.finance.amount(1, 100, 0),
     createdAt: faker.date.past(1),
     updatedAt: new Date()
   }
