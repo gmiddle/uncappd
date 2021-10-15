@@ -109,7 +109,7 @@ function randomEndNames() {
 
 const beers = [];
 
-for (let i = 0; i <= 300; i++) {
+for (let i = 0; i <= 100; i++) {
   let newBeer = {
     name: `${randomFrontWords()} ${randomEndNames()}`,
     description: `${randomDescriptions()}`,
