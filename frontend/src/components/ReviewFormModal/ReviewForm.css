@@ -1,0 +1,186 @@
+.review-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: fit-content;
+    padding: 0.938em;
+    background-color: white;
+    font-weight: lighter;
+    border-radius: 3px;
+    position: relative;
+  }
+  
+  .review-title {
+    font-size: 1.8em;
+    font-weight: lighter;
+    margin-top: 0;
+    text-align: center;
+    color: black;
+  }
+  
+  /* .review-divider {
+    width: 100%;
+    border: 1px solid #716364;
+  }
+   */
+
+  /* If a beer is not selected */
+  
+  .review-search {
+    margin-top: 1.25em;
+    background-color: white;
+    border: 1px solid rgb(126, 126, 126);
+    border-radius: 5px;
+    padding: 0 .938em;
+    box-sizing: border-box;
+    width: 25rem;
+    height: 3.125rem;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .results-container {
+    background-color: white;
+    position: absolute;
+    max-height: 300px;
+    overflow: auto;
+    top: 134px;
+    width: 400px;
+  }
+  
+  /* results-container */
+  .results-container::-webkit-scrollbar {
+    background-color: lightgray;
+    width: 1em;
+  }
+  
+  .results-container::-webkit-scrollbar-thumb {
+    background-color: darkgray;
+    border-radius: 20px;
+  }
+  
+  .results-container::-webkit-scrollbar-thumb:hover {
+    background-color: gray;
+  }
+  
+  .beer-result-container {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgb(126, 126, 126);
+    height: 5rem;
+    padding: 0.625em;
+  }
+  
+  .beer-result-image {
+    max-height: 3.75rem;
+    max-width: 5rem;
+  }
+  
+  .beer-result-name-container {
+    width: 17.5rem;
+  }
+  
+  .beer-result-name {
+    list-style-type: none;
+    margin-left: 0.625em;
+  }
+  
+  .beer-result-container:hover {
+    background-color: rgb(194, 194, 194);
+    cursor: pointer;
+  }
+  
+  .no-match {
+    height: 1.875rem;
+    padding: 0.625em;
+  }
+  
+  
+  /* If a beer is selected */
+  /* .beer-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 0.938em;
+  }
+  
+  .review-beer-image {
+    width: 9.375rem;
+    height: 6.25rem;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .review-beer-name-container {
+    width: 25rem;
+    height: 2.5rem;
+    display: inline-block;
+    margin-left: 1.875em;
+  }
+  
+  .review-beer-name {
+    font-size: 1.563em;
+  }
+  
+  .review-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .review-input-field {
+    background-color: white;
+    border: 1px solid rgb(126, 126, 126);
+    border-radius: 5px;
+    padding: 0.313em;
+    box-sizing: border-box;
+  }
+  
+  .comment-field {
+    height: 6.25rem;
+  }
+  
+  .form-row {
+    margin-top: 1.25em;
+  }
+  
+  .rating-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0;
+  }
+  
+  .abv-submit-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .review-submit-button {
+    background-color: #716364;
+    border-radius: 5px;
+    width: 8.75rem;
+    height: 3rem;
+    outline: 0;
+    color: white;
+    font-size: 1.25em;
+  }
+  
+  .review-submit-button:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+  }
+  
+  #beer-icon {
+    position: absolute;
+    bottom: 1.125rem;
+    left: 11.438rem;
+    font-size: 1.875em;
+  }
+  
+  #can-icon {
+    height: 1.25rem;
+  }
+   */

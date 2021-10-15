@@ -1,19 +1,20 @@
 import { useState, useRef, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { createReview, getMyReviews, getAllReviews } from '../../store/reviews';
 import { fetchBeers, fetchTop10 } from '../../store/beers';
 import { useBeerSelected } from '../../context/BeerSelected';
 import ReviewSearch from './ReviewSearch';
 import './ReviewForm.css'
 
+
 const ReviewForm = ({ onClose }) => {
     const [review, setReview] = useState('');
     const [rating, setRating] = useState('');
     const [reviewErrors, setReviewErrors] = useState([]);
     const { beerSelected, setBeerSelected, currentBeer, setCurrentBeer, setShowReviewModal } = useBeerSelected();
+    const userId = useSelector(state => state.session?.user?.id)
     // TODO - Image adding?
-
-    //TODO - useEffect for images?
+    // TODO - useEffect for images?
 
     const dispatch = useDispatch()
 
@@ -21,6 +22,7 @@ const ReviewForm = ({ onClose }) => {
         e.preventDefault();
 
         const reviewObj = {
+            userId,
             beerId: currentBeer.id,
             review,
             rating
@@ -56,8 +58,8 @@ const ReviewForm = ({ onClose }) => {
           <div className="review-divider"></div>
           {beerSelected ? (
             <>
-              <div className="drink-header">
-                {/* <div ref={imageRef} className="review-drink-image"/> */}
+              <div className="beer-header">
+                {/* <div ref={imageRef} className="review-beer-image"/> */}
                 <div className="review-beer-name-container">
                   <h2 className="review-beer-name">{currentBeer?.name}</h2>
                 </div>
@@ -76,10 +78,10 @@ const ReviewForm = ({ onClose }) => {
                   onChange={(e) => setReview(e.target.value)}
                   placeholder="Would you like to leave a review?"
                 />
-                <div className="form-row rating-serving-row">
+                <div className="form-row rating-row">
                   <label htmlFor="rating" hidden></label>
                   <select 
-                    className="review-input-field serving-style"
+                    className="review-input-field rating-beer"
                     name="rating"
                     value={rating}
                     onChange={(e) => setRating(e.target.value)}

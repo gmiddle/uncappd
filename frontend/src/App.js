@@ -35,11 +35,15 @@ function App() {
 
           <Route path="/beers">
             <ReviewFormModal />
-            <BeersPage isLoaded={isLoaded} />
+              <BeersPage isLoaded={isLoaded} />
           </Route>
 
           <Route path='/new-beer'>
               <BeerForm isLoaded={isLoaded} />
+          </Route>
+
+          <Route path='/reviews/all'>
+            <BeersPage isLoaded={isLoaded} />
           </Route>
           
         </Switch>

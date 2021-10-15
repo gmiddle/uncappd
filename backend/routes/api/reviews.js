@@ -46,24 +46,23 @@ const validateReview = [
 ]
 
 router.post('/', validateReview, asyncHandler (async (req, res) => {
-    const { user } = req;
-    const { beerId, rating, review } = req.body;
+    const { userId, beerId, rating, review } = req.body;
 
-    const review = await Review.create({
-        userId: user.id,
+    const reviewed = await Review.create({
+        userId,
         beerId,
         rating,
         review
     });
 
-    if (!review) {
+    if (!reviewed) {
         const error = new Error('Posting of Review Failed');
         error.status = 401;
         error.title = 'Posting of Review Failed'
         error.errors = ['Something went wrong - Posting of Review Failed']
     }
 
-    res.json(review);
+    res.json(reviewed);
 }))
 
 router.put('/:id(\\d+)', validateReview, asyncHandler (async (req, res) => {

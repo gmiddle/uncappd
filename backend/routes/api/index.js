@@ -5,6 +5,7 @@ const usersRouter = require('./users.js');
 // const { setTokenCookie } = require('../../utils/auth.js');
 // const { User } = require('../../db/models');
 const beersRouter = require('./beers');
+const reviewsRouter = require('./reviews');
 
 router.use('/session', sessionRouter);
 router.use('/users', usersRouter);
@@ -12,6 +13,7 @@ router.use('/users', usersRouter);
 //   res.json({ requestBody: req.body });
 // });
 router.use('/beers', beersRouter);
+router.use('/reviews', reviewsRouter)
 
 // // TEST route - setup
 // router.post('/test', function(req, res) {

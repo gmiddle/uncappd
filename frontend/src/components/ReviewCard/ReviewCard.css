@@ -1,0 +1,164 @@
+.reviewCard-container {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 1.25em;
+    background-color: white;
+    border-radius: 9px;
+    margin-top: 2.5em;
+    position: relative;
+  }
+  
+  .reviewCard-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .reviewCard-profile-pic {
+    min-height: 5rem;
+    min-width: 5rem;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+  }
+  
+  .reviewCard-title-container {
+    width: 40rem;
+    max-height: 5rem;
+  }
+  
+  .reviewCard-title {
+    font-size: 1.25em;
+    width: fit-content;
+  }
+  
+  .inline-block {
+    display: inline-block;
+  }
+  
+  .reviewCard-user-name, #user-profile-link {
+    color: #DC8C66;
+  }
+  
+  .reviewCard-beer-pic {
+    height: 5rem;
+    width: 5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 3px solid #63636383;
+    border-radius: 3px;
+  }
+  
+  .reviewCard-rating {
+    font-size: 1.25em;
+    margin-top: 1.25em;
+    display: inline-block;
+  }
+  
+  .edit-review-button {
+    font-size: 0.813em;
+    color: blue;
+    position: absolute;
+    bottom: 2.188rem;
+    left: 9.375rem;
+  }
+  
+  .delete-review-button {
+    font-size: 0.875em;
+    color: red;
+    background-color: rgba(255, 0, 0, 0.171);
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    border: 1px solid;
+    padding: 0.188em 0.313em;
+    border-radius: 3px;
+  }
+  
+  .edit-review-button:hover,
+  .edit-submit:hover {
+    cursor: pointer;
+  }
+  
+  .delete-review-button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+  
+  .reviewCard-review-container {
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 1.875em;
+    margin-bottom: 1.875em;
+    border: 2px solid #63636383;
+    min-height: 6.25rem;
+    padding: 0.625em;
+  }
+  
+  .reviewCard-review {
+    font-size: 1.125em;
+  }
+  
+  .reviewCard-time {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    font-size: 0.875em;
+  }
+  
+  .reviewCard-updated-time {
+    position: absolute;
+    bottom: 2.188rem;
+    right: 9.375rem;
+    font-size: 0.813em;
+    font-weight: lighter;
+    /* font-family: 'Fira Sans', sans-serif; */
+    color: rgb(138, 138, 138);
+  }
+  
+  .beer-icon {
+    position: absolute;
+    top: 6.563rem;
+    right: 1rem;
+  }
+  
+  .wine-sizing {
+    font-size: 1.875em;
+  }
+  
+  .can-img {
+    width: 1.875rem;
+    display: inline;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Edit field */
+  
+  .edit-beers, .edit-rating {
+    margin-left: 0.938em;
+  }
+  
+  .edit-review-field {
+    width: 40.625rem;
+    margin: 1.875em 0;
+    margin-left: 6.875em;
+    border: 2px solid #0f0f0f83;
+    min-height: 5rem;
+    padding: 0.625em;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.24);
+    resize: none;
+  }
+  
+  .edit-submit {
+    font-size: 0.813em;
+    color: blue;
+    position: absolute;
+    bottom: 2.125rem;
+    left: 14.063rem;
+  }
+ 
+  

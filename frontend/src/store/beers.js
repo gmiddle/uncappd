@@ -1,4 +1,4 @@
-import { csrfFetch as fetch } from "./csrf";
+import { csrfFetch } from "./csrf";
 
 const SET_BEERS = `beers/setBeers`;
 // const SET_TOP_10 = `beers/setTop10`;
@@ -20,7 +20,7 @@ const postBeer = (beer) => ({
 })
 
 export const fetchBeers = () => async dispatch => {
-    const response = await fetch(`/api/beers`);
+    const response = await csrfFetch(`/api/beers`);
 
     if(response.ok) {
         const beers = await response.json();
@@ -40,7 +40,7 @@ export const createBeer = (beer) => async dispatch => {
 
     if (beerImg) formData.append('image', beerImg)
     // TODO - breweryId dropdown on form?
-    const response = await fetch('api/beers', {
+    const response = await csrfFetch('api/beers', {
         method: 'POST',
         headers: {
             // "Content-Type":"multipart/form-data"

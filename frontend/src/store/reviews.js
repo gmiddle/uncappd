@@ -4,9 +4,9 @@ const SET_MY_REVIEWS = 'reviews/setMyReviews';
 const SET_ALL_REVIEWS = 'reviews/setAllReviews';
 const REMOVE_MY_REVIEWS = 'reviews/removeMyReviews';
 const POST_REVIEW = 'reviews/postReview';
-// TODO - edit review
-// TODO - POST review
-// TODO - DELETE review
+const DELETE_REVIEW = 'reviews/deleteReview'
+const EDIT_REVIEW = 'reviews/editReview'
+
 
 const setMyReviews = (myReviews) => ({
     type: SET_MY_REVIEWS,
@@ -38,7 +38,7 @@ export const removeMyReviews = () => ({
 })
 
 export const getMyReviews = () => async dispatch => {
-    const response = await fetch('/api/reviews');
+    const response = await csrfFetch('/api/reviews');
     if (response.ok) {
       const reviews = await response.json();
       dispatch(setMyReviews(reviews));
@@ -46,7 +46,7 @@ export const getMyReviews = () => async dispatch => {
 }
 
 export const getAllReviews = () => async dispatch => {
-const response = await fetch('/api/reviews/all');
+const response = await csrfFetch('/api/reviews/all');
 if (response.ok) {
     const allReviews = await response.json();
     dispatch(setAllReviews(allReviews));
@@ -54,10 +54,12 @@ if (response.ok) {
 }
 
 export const createReview = (newReview) => async dispatch => {
-    const { beerId, review, rating } = newReview;
+    const { userId, beerId, review, rating } = newReview;
+    // console.log('-------------------BEFORE FETCH', review)
     const response = await csrfFetch('/api/reviews', {
       method: 'POST',
       body: JSON.stringify({
+        userId,
         beerId,
         review,
         rating,
@@ -68,11 +70,12 @@ export const createReview = (newReview) => async dispatch => {
       const createdReview = await response.json();
       dispatch(postReview(createdReview));
     }
+    // console.log('------------------- AFTER FETCH', review)
     return response;
 }
 
 export const destroyReview = (reviewId) => async dispatch => {
-    const response = await fetch(`/api/reviews`, {
+    const response = await csrfFetch(`/api/reviews`, {
       method: 'DELETE',
       body: JSON.stringify({
         reviewId
@@ -80,15 +83,15 @@ export const destroyReview = (reviewId) => async dispatch => {
     });
     
     if (response.ok) {
-      const reviewToDelete = await response.json();
-      dispatch(deleteReview(reviewToDelete));
+      const reviewToDestroy = await response.json();
+      dispatch(deleteReview(reviewToDestroy));
     }
     return response;
 }
   
 export const updateReview = (reviewObj) => async dispatch => {
     const {reviewId, editBeerId, rating, review} = reviewObj;
-    const response = await fetch(`/api/reviews/${reviewId}`, {
+    const response = await csrfFetch(`/api/reviews/${reviewId}`, {
         method: 'PUT',
         body: JSON.stringify({
         beerId: editBeerId, 
