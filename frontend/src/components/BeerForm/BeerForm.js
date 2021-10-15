@@ -32,6 +32,8 @@ function BeerForm({ beer }) {
     //     if (file) setBeerImg(file);
     // }
 
+    // TODO - put history.push in your logout function
+
     const onSubmit = (e) => {
         e.preventDefault();
         const newBeer = {
