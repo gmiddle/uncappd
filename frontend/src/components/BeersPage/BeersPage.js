@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import Navigation from "../Navigation";
+// import Navigation from "../Navigation";
 import { useHistory } from "react-router";
 import { fetchBeers } from "../../store/beers";
 import { useEffect } from "react";

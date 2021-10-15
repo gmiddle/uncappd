@@ -20,7 +20,7 @@ const ReviewForm = ({ onClose }) => {
     const onSubmit = (e) => {
         e.preventDefault();
 
-        const review = {
+        const reviewObj = {
             beerId: currentBeer.id,
             review,
             rating
@@ -31,7 +31,7 @@ const ReviewForm = ({ onClose }) => {
             return
         }
 
-        dispatch(createReview(review))
+        dispatch(createReview(reviewObj))
             .then(() => dispatch(getMyReviews()))
             .then(() => setShowReviewModal(false))
             .then(() => setBeerSelected(false))
@@ -40,7 +40,7 @@ const ReviewForm = ({ onClose }) => {
             .then(() => dispatch(getAllReviews()))
             // .then(() => dispatch(fetchTop10()))
             .catch(async (res) => {
-                const data = await res.join();
+                const data = await res.json();
                 if(data && data.errors) {
                     setReviewErrors(data.errors)
                     return;

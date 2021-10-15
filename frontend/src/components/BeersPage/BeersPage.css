@@ -11,80 +11,80 @@
 }
 
 #beers-upper {
-position: relative;
-bottom: 3.125rem;
+    position: relative;
+    bottom: 3.125rem;
 }
 
 
 .beers-feed-container {
-width: 80%;
-box-sizing: border-box;
-height: 85vh;
-background-color: whitesmoke;
-margin: 0 auto;
-margin-top: 6.25rem;
-border-radius: 3px;
-display: flex;
-flex-wrap: wrap;
-padding: 3.125rem;
-overflow: auto;
+    width: 80%;
+    box-sizing: border-box;
+    height: 85vh;
+    background-color: whitesmoke;
+    margin: 0 auto;
+    margin-top: 6.25rem;
+    border-radius: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3.125rem;
+    overflow: auto;
 }
 
 .beers-feed-container::-webkit-scrollbar {
-background-color: lightgray;
-width: 1em;
+    background-color: lightgray;
+    width: 1em;
 }
 
 .beers-feed-container::-webkit-scrollbar-thumb {
-background-color: darkgray;
-border-radius: 2px;
+    background-color: darkgray;
+    border-radius: 2px;
 }
 
 .beers-feed-container::-webkit-scrollbar-thumb:hover {
-background-color: gray;
+    background-color: gray;
 }
 
-.beers-title {
-color: black;
-margin: 1.5em auto 2.5em auto;
-font-size: 2.5em;
+.beers-upper {
+    color: black;
+    margin: 1.5em auto 2.5em auto;
+    font-size: 2.5em;
 }
 
-/* .beers-divider {
-border: 2px solid rgb(182, 182, 182);
-width: 100%;
-background-color: rgb(182, 182, 182);
-margin-bottom: 1.875rem;
-} */
+.beers-divider {
+    border: 2px solid rgb(182, 182, 182);
+    width: 100%;
+    background-color: rgb(182, 182, 182);
+    margin-bottom: 1.875rem;
+}
 
 .newBeers-card {
-height: 11.813rem;
-width: 38.75rem;
-border: 2px dashed #a1a1a1;
-border-radius: 3px;
-display: flex;
-align-items: center;
-margin: 0 auto;
-margin-top: 1.25rem;
-background-color: white;
-text-align: center;
+    height: 11.813rem;
+    width: 38.75rem;
+    border: 2px dashed #a1a1a1;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 1.25rem;
+    background-color: white;
+    text-align: center;
 }
 
 .plus-icon {
-font-size: 12.5em;
-width: 100%;
-text-align: center;
-color:rgb(182, 182, 182);
+    font-size: 12.5em;
+    width: 100%;
+    text-align: center;
+    color:rgb(182, 182, 182);
 }
 
 .plus-icon:hover {
-color: rgb(133, 133, 133);
+    color: rgb(133, 133, 133);
 }
 
 .newBeers-card:hover {
-background-color: rgb(230, 230, 230);
-cursor: pointer;
-transform: scale(1.02);
+    background-color: rgb(230, 230, 230);
+    cursor: pointer;
+    transform: scale(1.02);
 }
 
 

@@ -69,12 +69,10 @@ const beersReducer = (state = initialState, action) => {
             action.beers.forEach((beer) => normalizedState[beer.id] = beer)
             newState['beerList'] = normalizedState;
             return newState;
-        
         case POST_BEER:
             const newBeer = action.beer;
             newState.beerList[newBeer.id] = newBeer;
             return newState
-        
         default:
             return state;
     }
