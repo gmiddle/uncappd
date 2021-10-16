@@ -3,6 +3,7 @@ import { csrfFetch } from "./csrf";
 const SET_BEERS = `beers/setBeers`;
 const SET_TOP_10 = `beers/setTop10`;
 const POST_BEER = `beers/postBeer`;
+const GET_ONE_BEER = `beers/getOneBeer`;
 
 const setBeers = (beers) => ({
     type: SET_BEERS,
@@ -19,12 +20,30 @@ const postBeer = (beer) => ({
     beer
 })
 
+const getOneBeer = (beer) => ({
+    type: GET_ONE_BEER,
+    beer
+})
+
 export const fetchBeers = () => async dispatch => {
+    // console.log('---------INSIDE FETCH BEERS ROUTE')
     const response = await csrfFetch(`/api/beers`);
 
     if(response.ok) {
         const beers = await response.json();
         dispatch(setBeers(beers))
+    }
+    return response;
+}
+
+export const fetchOneBeer = (id) => async dispatch => {
+    // console.log('---------INSIDE FETCH ONE ROUTE')
+    const response = await csrfFetch(`/api/beers/${id}`)
+    // const beer = await response.json()
+    if(response.ok) {
+        const beer = await response.json();
+        // console.log('-------- this is the BEER from STORE', beer)
+        dispatch(getOneBeer(beer))
     }
     return response;
 }
@@ -73,8 +92,12 @@ const beersReducer = (state = initialState, action) => {
             const newBeer = action.beer;
             newState.beerList[newBeer.id] = newBeer;
             return newState
-        // case SET_TOP_10: 
-        
+        // case SET_TOP_10:
+        case GET_ONE_BEER:
+            newState.singleBeer = action.beer
+            console.log('---... newState.singleBeer from getOneBeer Reducer', newState.singleBeer)
+            console.log('---... this is the newState from getOneBeer Reducer', newState)
+            return newState        
         default:
             return state;
     }

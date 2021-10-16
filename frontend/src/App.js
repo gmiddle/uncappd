@@ -9,6 +9,7 @@ import Navigation from "./components/Navigation";
 import BeersPage from "./components/BeersPage";
 import BeerForm from "./components/BeerForm";
 import ReviewForm from './components/ReviewFormModal';
+import SingleBeerPage from "./components/SingleBeerPage/SingleBeerPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ function App() {
             <SignupFormPage />
           </Route>
 
-          <Route path="/beers">
+          <Route exact path="/beers">
             <ReviewForm />
               <BeersPage isLoaded={isLoaded} />
           </Route>
@@ -44,6 +45,10 @@ function App() {
 
           <Route path='/reviews/all'>
             <BeersPage isLoaded={isLoaded} />
+          </Route>
+
+          <Route path='/beers/:id'>
+            <SingleBeerPage isLoaded={isLoaded} />
           </Route>
 
           

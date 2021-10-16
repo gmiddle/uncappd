@@ -3,10 +3,10 @@ import { useBeerSelected } from '../../context/BeerSelected';
 import ReviewFormModal from '../ReviewFormModal';
 import "./BeerCard.css";
 
-const BeerCard = ({ beer }) => {
+const BeerCard = ({ beer, id, reviews, rating, ibu, abv }) => {
     const beerImgRef = useRef();
     const { setBeerSelected, setCurrentBeer, setShowReviewModal } = useBeerSelected();
-
+    console.log('---------this is the id', id)
     // TODO AVG RATING
     let avgRating;
     const ratingsArray = [];
