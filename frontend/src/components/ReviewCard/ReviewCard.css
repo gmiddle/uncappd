@@ -1,4 +1,4 @@
-.reviewCard-container {
+/* .reviewCard-container {
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -113,7 +113,6 @@
     right: 9.375rem;
     font-size: 0.813em;
     font-weight: lighter;
-    /* font-family: 'Fira Sans', sans-serif; */
     color: rgb(138, 138, 138);
   }
   
@@ -134,11 +133,11 @@
   
   .hidden {
     display: none;
-  }
+  } */
   
   /* Edit field */
   
-  .edit-beers, .edit-rating {
+  /* .edit-beers, .edit-rating {
     margin-left: 0.938em;
   }
   
@@ -161,4 +160,4 @@
     left: 14.063rem;
   }
  
-  
+   */

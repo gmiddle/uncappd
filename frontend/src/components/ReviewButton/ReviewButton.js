@@ -12,13 +12,13 @@ const ReviewButton = ({ onOpen }) => {
   return (
     <>
       {(sessionExists && !pathToBeers) && (
-        <img 
+        <button 
           ref={modalButtonRef}
           onClick={onOpen}
           className="review-button" 
-        //   src="/images/review-button.png" 
-          alt="plus symbol" 
-        />
+        //   TODO src="/images/review-button.png" 
+          alt="Add A Review" 
+        >Add A Review</button>
       )}
     </>
   )

@@ -1,5 +1,5 @@
-.new-beer-body {
-    /* background-image: url('https://cdn.discordapp.com/attachments/886336420552269847/888612947096637480/unknown.png'); */
+/* .new-beer-body {
+    background-image: url('https://cdn.discordapp.com/attachments/886336420552269847/888612947096637480/unknown.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -84,8 +84,8 @@
 .new-beer-button {
     border: 1px solid;
     height: 1.875rem;
-    /* background-color: #dc8c66;
-    color: white; */
+    background-color: #dc8c66;
+    color: white;
     color: black;
     border-radius: 3px;
 }
@@ -95,4 +95,4 @@
     color: white;
     cursor: pointer;
 }
-  
+   */

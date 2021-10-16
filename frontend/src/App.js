@@ -8,7 +8,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import BeersPage from "./components/BeersPage";
 import BeerForm from "./components/BeerForm";
-import ReviewFormModal from './components/ReviewFormModal';
+import ReviewForm from './components/ReviewFormModal';
 
 function App() {
   const dispatch = useDispatch();
@@ -34,7 +34,7 @@ function App() {
           </Route>
 
           <Route path="/beers">
-            <ReviewFormModal />
+            <ReviewForm />
               <BeersPage isLoaded={isLoaded} />
           </Route>
 
@@ -45,6 +45,8 @@ function App() {
           <Route path='/reviews/all'>
             <BeersPage isLoaded={isLoaded} />
           </Route>
+
+          
           
         </Switch>
       )}

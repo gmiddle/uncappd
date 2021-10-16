@@ -1,7 +1,7 @@
 import { csrfFetch } from "./csrf";
 
 const SET_BEERS = `beers/setBeers`;
-// const SET_TOP_10 = `beers/setTop10`;
+const SET_TOP_10 = `beers/setTop10`;
 const POST_BEER = `beers/postBeer`;
 
 const setBeers = (beers) => ({
@@ -9,10 +9,10 @@ const setBeers = (beers) => ({
     beers
 })
 
-// const setTop10Beers = (top10Beers) => ({
-//     type: SET_TOP_10,
-//     top10Beers
-// })
+const setTop10Beers = (top10Beers) => ({
+    type: SET_TOP_10,
+    top10Beers
+})
 
 const postBeer = (beer) => ({
     type: POST_BEER,
@@ -73,9 +73,13 @@ const beersReducer = (state = initialState, action) => {
             const newBeer = action.beer;
             newState.beerList[newBeer.id] = newBeer;
             return newState
+        // case SET_TOP_10: 
+        
         default:
             return state;
     }
 }
+
+
 
 export default beersReducer;

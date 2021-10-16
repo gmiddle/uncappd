@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useBeerSelected } from '../../context/BeerSelected';
-
+import ReviewFormModal from '../ReviewFormModal';
 import "./BeerCard.css";
 
 const BeerCard = ({ beer }) => {
@@ -36,6 +36,7 @@ const BeerCard = ({ beer }) => {
             <div className="beerCard-divider"></div>
             <div className="beerCard-content"></div>
                 <h1 className="beerCard-title">{beer.name}</h1>
+                <ReviewFormModal />
                 <p className="beerCard-description">{beer.description}</p>
                 <div className="beerCard-info">
                     <p className="beerCard-info beerCard-rating-avg">Rating: ${avgRating ? `${avgRating}/5` : 'N/A'}</p>
