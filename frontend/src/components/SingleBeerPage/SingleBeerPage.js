@@ -5,14 +5,14 @@ import { fetchOneBeer } from "../../store/beers";
 import { getAllReviews, destroyReview, updateReview, createReview } from "../../store/reviews";
 import { useEffect, useState } from "react";
 import './SingleBeerPage.css';
-import {ReviewFormModal} from '../ReviewFormModal'
+
 
 
 
 const SingleBeerPage = ({ beer }) => {
     const history = useHistory();
     const sessionUser = useSelector(state => state?.session?.user);
-    const beers = useSelector(state => state?.beers);
+    // const beers = useSelector(state => state?.beers);
     const { id } = useParams();
     const singleBeer = useSelector(state => state?.beers?.singleBeer);
     const dispatch = useDispatch();
@@ -27,7 +27,7 @@ const SingleBeerPage = ({ beer }) => {
     useEffect(() => {
         dispatch(fetchOneBeer(id));
         return dispatch(fetchOneBeer(id))
-    }, [dispatch, count, count2])
+    }, [dispatch, id, count, count2])
 
     // useEffect(() => {
     //     dispatch(fetchOneBeer(id));

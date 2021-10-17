@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
@@ -9,6 +9,7 @@ import './Navigation.css';
 function Navigation({ isLoaded }){
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user);
+    const history = useHistory()
     
     const [ credential, setCredential ] = useState('');
     const [ password, setPassword ] = useState('');
@@ -17,6 +18,7 @@ function Navigation({ isLoaded }){
         setCredential("Demo-lition")
         setPassword("password")
         return dispatch(sessionActions.login({ credential: "Demo-lition", password: "password" }))
+        .then(history.push('/beers/'))
     }
 
     let sessionLinks;
@@ -49,11 +51,14 @@ function Navigation({ isLoaded }){
                         {/* <img className="logoImg" src="https://res.cloudinary.com/dxo7djnid/image/upload/v1634098191/uncappd/uncappd_logo_dnj6ne.gif" alt="" /> */}
                     </NavLink>
                 </div>
+                {sessionUser && 
                 <div className="beers-list-button-container">
                     <NavLink className="beers-list-navlink" to="/beers/">
                         <div className="beers-list-button-div">Beers List</div>
                     </NavLink>
                 </div>
+                
+                }
                 <div className="nav-button">
                     {isLoaded && sessionLinks}
                 </div>

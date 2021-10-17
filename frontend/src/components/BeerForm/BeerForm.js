@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { createBeer, fetchBeers } from "../../store/beers";
-import { useBeerSelected } from "../../context/BeerSelected";
-import Navigation from '../Navigation';
 import './BeerForm.css'
 
 function BeerForm({ beer }) {
@@ -18,10 +16,6 @@ function BeerForm({ beer }) {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    // useEffect(() => {
-    //     setShowReviewModal(false);
-    // })
-
     if (sessionUser === undefined) {
         history.push('/');
         return null;
@@ -31,8 +25,6 @@ function BeerForm({ beer }) {
     //     const file = e.target.files[0];
     //     if (file) setBeerImg(file);
     // }
-
-    // TODO - put history.push in your logout function
 
     const onSubmit = (e) => {
         e.preventDefault();

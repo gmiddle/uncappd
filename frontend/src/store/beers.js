@@ -1,7 +1,7 @@
 import { csrfFetch } from "./csrf";
 
 const SET_BEERS = `beers/setBeers`;
-const SET_TOP_10 = `beers/setTop10`;
+// const SET_TOP_10 = `beers/setTop10`;
 const POST_BEER = `beers/postBeer`;
 const GET_ONE_BEER = `beers/getOneBeer`;
 
@@ -10,10 +10,10 @@ const setBeers = (beers) => ({
     beers
 })
 
-const setTop10Beers = (top10Beers) => ({
-    type: SET_TOP_10,
-    top10Beers
-})
+// const setTop10Beers = (top10Beers) => ({
+//     type: SET_TOP_10,
+//     top10Beers
+// })
 
 const postBeer = (beer) => ({
     type: POST_BEER,
@@ -49,7 +49,7 @@ export const fetchOneBeer = (id) => async dispatch => {
 }
 
 export const createBeer = (beer) => async dispatch => {
-    const { name, description, beerImg, abv, ibu, breweryId } = beer;
+    const { name, description, beerImg, abv, ibu } = beer;
 
     const formData = new FormData();
     formData.append('name', name);
