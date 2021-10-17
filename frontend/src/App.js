@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch, Link } from "react-router-dom";
 import { fetchBeers } from "./store/beers";
+import { getAllReviews } from "./store/reviews";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import BeersPage from "./components/BeersPage";
 import BeerForm from "./components/BeerForm";
+import ReviewForm from './components/ReviewFormModal';
+import SingleBeerPage from "./components/SingleBeerPage/SingleBeerPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -14,9 +17,7 @@ function App() {
   
   useEffect(() => {
     dispatch(sessionActions.restoreUser())
-    // .then(() => dispatch(fetchEmails()))
-    // .then(() => dispatch(fetchUsernames()))
-    // .then(() => dispatch(fetchUsers()))
+    .then(() => dispatch(getAllReviews()))
     .then(() => dispatch(fetchBeers()))
     .then(() => setIsLoaded(true));
   }, [dispatch]);
@@ -33,13 +34,25 @@ function App() {
             <SignupFormPage />
           </Route>
 
-          <Route path="/beers">
-            <BeersPage isLoaded={isLoaded} />
+          <Route exact path="/beers">
+            <ReviewForm />
+              <BeersPage isLoaded={isLoaded} />
           </Route>
 
           <Route path='/new-beer'>
               <BeerForm isLoaded={isLoaded} />
           </Route>
+
+          <Route path='/reviews/all'>
+            <BeersPage isLoaded={isLoaded} />
+          </Route>
+
+          <Route path='/beers/:id'>
+            <SingleBeerPage isLoaded={isLoaded} />
+          </Route>
+
+          
+          
         </Switch>
       )}
     </>

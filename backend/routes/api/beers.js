@@ -1,6 +1,6 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
-const { Beer, Review } = require('../../db/models');
+const { User, Beer, Review } = require('../../db/models');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 // AWS integration?
@@ -36,6 +36,28 @@ router.get('/', asyncHandler(async (req,res) => {
     });
     res.json(beers)
 }))
+
+router.get('/:id', asyncHandler(async (req,res) => {
+    console.log('------------------------<<<<>>>>>>>>----------------------------' )
+    const beerId = req.params.id
+
+    const userId = 12;
+
+    const beerToLoad = await Beer.findByPk(beerId, {
+        include: 
+            {model: Review, include: {model: User}}
+    });
+    console.log ('-------beerToLoad from backend route', beerToLoad)
+    res.json(beerToLoad)
+}))
+
+// models.products.findAll({
+//     include: [
+//       {model: models.comments, include: [models.comments.users] }
+//     ]
+//   })
+
+
 
 const fileExists = (req, res, next) => {
     if (!req.file) req.file = undefined;

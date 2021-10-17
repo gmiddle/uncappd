@@ -32,6 +32,8 @@ function BeerForm({ beer }) {
     //     if (file) setBeerImg(file);
     // }
 
+    // TODO - put history.push in your logout function
+
     const onSubmit = (e) => {
         e.preventDefault();
         const newBeer = {
@@ -118,7 +120,6 @@ function BeerForm({ beer }) {
                             max="300"
                         /> <span className="ibu-label-text">%</span>
                     </label>
-
                     <button className="new-beer-input new-beer-button">Create</button>
                 </form>
             </div>
