@@ -2,9 +2,10 @@ import { useDispatch, useSelector } from "react-redux";
 // import Navigation from "../Navigation";
 import { useHistory, useParams } from "react-router-dom";
 import { fetchOneBeer } from "../../store/beers";
-import { useEffect } from "react";
+import { getAllReviews, destroyReview, updateReview } from "../../store/reviews";
+import { useEffect, useState } from "react";
 import './SingleBeerPage.css';
-import BeerCard from "../BeerCard";
+
 
 
 const SingleBeerPage = ({ beer }) => {
@@ -14,11 +15,16 @@ const SingleBeerPage = ({ beer }) => {
     const { id } = useParams();
     const singleBeer = useSelector(state => state?.beers?.singleBeer);
     const dispatch = useDispatch();
-
+    const [updateClicked, setUpdateClicked] = useState(false);
+    const [reviewText, setReviewText] = useState('');
+    const [reviewId, setReviewId] = useState('');
+    const [rating, setRating] = useState('');
+    const [count, setCount] = useState(1);
 
     useEffect(() => {
         dispatch(fetchOneBeer(id));
-    }, [dispatch])
+        return dispatch(fetchOneBeer(id))
+    }, [dispatch, count])
 
     // console.log('-----this is the single beer from SingleBeerPage Component', singleBeer)
 
@@ -37,13 +43,26 @@ const SingleBeerPage = ({ beer }) => {
         history.push("/new-beer")
     }
 
-    const handleUpdateClick = () => {
-        // dispatch update
-        // dispatch get all reviews
-    }
+
     const handleDeleteClick = () => {
         // dispatch delete
+        dispatch(destroyReview(id))
         // dispatch get all reviews
+        dispatch(getAllReviews(id))
+    }
+
+    const reviewUpdateHandler = (e) => {
+        e.preventDefault()
+        setCount(prev => prev + 1)
+        const updatedReviewObj = {
+            reviewId,
+            beerId: id, 
+            rating, 
+            review: reviewText
+        }
+        dispatch(updateReview(updatedReviewObj))
+        dispatch(getAllReviews(id))
+        setUpdateClicked(false)
     }
 
     // make sure dispatch is connected with db
@@ -71,11 +90,42 @@ const SingleBeerPage = ({ beer }) => {
                             {(sessionUser?.id === review?.User?.id) ? 
                             (<div>
                                 <button
-                                    onClick={handleUpdateClick}
+                                    onClick={() => setUpdateClicked(true)}
                                 >Update Review</button>
                                 <button
                                     onClick={handleDeleteClick}
                                 >Delete Review</button>
+                                {(updateClicked) ? 
+                                (<div>
+                                    <form onSubmit={reviewUpdateHandler}>
+                                        <select 
+                                            className="review-input-field rating-beer"
+                                            name="rating"
+                                            value={rating}
+                                            onChange={(e) => setRating(e.target.value)}
+                                        >
+                                            <option value="" disabled>--Rating--</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                        <textarea 
+                                        type="text"
+                                        onChange={(e) => {
+                                            setReviewText(e.target.value)
+                                            setReviewId(review.id)
+                                            
+                                        }}
+                                        value={reviewText}
+                                        placeholder="Please make your update here"
+                                        name="review"
+                                        />
+                                        
+                                        <button type="submit">Submit Update</button>
+                                    </form>
+                                </div>) : null}
                             </div>) : null
                             }
                         </li>

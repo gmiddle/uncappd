@@ -13,7 +13,7 @@ const setMyReviews = (myReviews) => ({
     myReviews
 })
   
-  const setAllReviews = (allReviews) => ({
+const setAllReviews = (allReviews) => ({
     type: SET_ALL_REVIEWS,
     allReviews
 })
@@ -90,11 +90,11 @@ export const destroyReview = (reviewId) => async dispatch => {
 }
   
 export const updateReview = (reviewObj) => async dispatch => {
-    const {reviewId, editBeerId, rating, review} = reviewObj;
+    const {reviewId, beerId, rating, review} = reviewObj;
     const response = await csrfFetch(`/api/reviews/${reviewId}`, {
         method: 'PUT',
         body: JSON.stringify({
-        beerId: editBeerId, 
+        beerId, 
         rating, 
         review
         })
@@ -133,19 +133,15 @@ const reviewsReducer = (state = initialState, action) => {
             newState['allReviews'] = [action.newReview, ...newState['allReviews']];
             return newState;
         case DELETE_REVIEW:
+            console.log('--------this is the BEFORE newState', newState)
             const newMyReviews = newState['myReviews'].filter(review => review.id !== action.reviewToDestroy.id)
-            const newAllReviews = newState['allReviews'].filter(review => review.id !== action.reviewToDestroy.id)
-            newState['myReviews'] = newMyReviews;
-            newState['allReviews'] = newAllReviews;
+            newState['myReviews'] = newMyReviews
+            console.log('--------this is state AFTER delete', newState)
             return newState;
         case EDIT_REVIEW:
             const editedReview = action.reviewToEdit;
-            // update that review in myReviews:
-            const myReviewIdx = newState['myReviews'].findIndex(review => review.id === editedReview.id)
-            newState.myReviews[myReviewIdx] = editedReview;
-            // update that review in allReviews:
-            const allReviewIdx = newState['allReviews'].findIndex(review => review.id === editedReview.id)
-            newState.allReviews[allReviewIdx] = editedReview;
+            const reviewIdx = newState.singleBeer.Reviews.findIndex(review => review.id === editedReview.id)
+            newState.singleBeer.Reviews[reviewIdx] = editedReview;
             return newState;
         default:
             return state;

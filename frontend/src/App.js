@@ -43,10 +43,6 @@ function App() {
               <BeerForm isLoaded={isLoaded} />
           </Route>
 
-          <Route path='/reviews/all'>
-            <BeersPage isLoaded={isLoaded} />
-          </Route>
-
           <Route path='/beers/:id'>
             <SingleBeerPage isLoaded={isLoaded} />
           </Route>

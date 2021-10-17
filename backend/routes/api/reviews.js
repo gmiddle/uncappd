@@ -65,18 +65,21 @@ router.post('/', validateReview, asyncHandler (async (req, res) => {
     res.json(reviewed);
 }))
 
-router.put('/:id(\\d+)', validateReview, asyncHandler (async (req, res) => {
+router.put('/:id', validateReview, asyncHandler (async (req, res) => {
+    console.log('--------------------------UPDATE PUT ROUTE WAS HIT')
     const { beerId, rating, review } = req.body;
     const reviewId = req.params.id;
-
+    console.log('--------------------------', beerId)
+    console.log('--------------------------', rating)
+    console.log('--------------------------', review)
     const reviewToEdit = await (Review.findByPk(reviewId))
     
-    await reviewToEdit.update({
+    const updatedReview = await reviewToEdit.update({
         beerId,
         rating,
         review
     })
-
+    console.log('--------------------------updatedReview', updatedReview)
     res.json(reviewToEdit);
 }));
 

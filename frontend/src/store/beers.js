@@ -95,8 +95,8 @@ const beersReducer = (state = initialState, action) => {
         // case SET_TOP_10:
         case GET_ONE_BEER:
             newState.singleBeer = action.beer
-            console.log('---... newState.singleBeer from getOneBeer Reducer', newState.singleBeer)
-            console.log('---... this is the newState from getOneBeer Reducer', newState)
+            // console.log('---... newState.singleBeer from getOneBeer Reducer', newState.singleBeer)
+            // console.log('---... this is the newState from getOneBeer Reducer', newState)
             return newState        
         default:
             return state;

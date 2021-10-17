@@ -38,7 +38,7 @@ router.get('/', asyncHandler(async (req,res) => {
 }))
 
 router.get('/:id', asyncHandler(async (req,res) => {
-    console.log('------------------------<<<<>>>>>>>>----------------------------' )
+    // console.log('------------------------<<<<>>>>>>>>----------------------------' )
     const beerId = req.params.id
 
     const userId = 12;
@@ -47,7 +47,7 @@ router.get('/:id', asyncHandler(async (req,res) => {
         include: 
             {model: Review, include: {model: User}}
     });
-    console.log ('-------beerToLoad from backend route', beerToLoad)
+    // console.log ('-------beerToLoad from backend route', beerToLoad)
     res.json(beerToLoad)
 }))
 
@@ -70,7 +70,7 @@ router.post('/',
     // validateBeer,
     asyncHandler(async (req,res) => {
         const { name, description, abv, ibu, beerImg } = req.body;
-        console.log("this is the name and desc---------", name, description)
+        // console.log("this is the name and desc---------", name, description)
         // AWS integration?
         const newBeer = await Beer.create({
             name,
