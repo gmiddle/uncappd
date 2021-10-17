@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 // import Navigation from "../Navigation";
 import { useHistory } from "react-router";
 import { fetchBeers } from "../../store/beers";
@@ -42,7 +43,9 @@ const BeersPage = ({ beer }) => {
                     <div className="plus-icon">+</div>
                 </div>
                 {sortedBeers.map(beer => (
-                    <BeerCard key={beer.id} beer={beer} />
+                    <Link to={`/beers/${beer.id}`}>
+                        <BeerCard key={beer.id} beer={beer} />
+                    </Link>
                 ))}
             </div>
             

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
@@ -49,9 +49,14 @@ function Navigation({ isLoaded }){
                         {/* <img className="logoImg" src="https://res.cloudinary.com/dxo7djnid/image/upload/v1634098191/uncappd/uncappd_logo_dnj6ne.gif" alt="" /> */}
                     </NavLink>
                 </div>
-                    <div className="nav-button">
-                        {isLoaded && sessionLinks}
-                    </div>
+                <div className="beers-list-button-container">
+                    <NavLink className="beers-list-navlink" to="/beers/">
+                        <div className="beers-list-button-div">Beers List</div>
+                    </NavLink>
+                </div>
+                <div className="nav-button">
+                    {isLoaded && sessionLinks}
+                </div>
             </div>
         </div>
     );

@@ -1,4 +1,4 @@
-/* .beers-main {
+.beers-main {
     background-image: url('');
     background-size: cover;
     background-position: center;
@@ -85,7 +85,7 @@
     background-color: rgb(230, 230, 230);
     cursor: pointer;
     transform: scale(1.02);
-} */
+}
 
 
 /* .github-logo {

@@ -8,7 +8,6 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import BeersPage from "./components/BeersPage";
 import BeerForm from "./components/BeerForm";
-import ReviewForm from './components/ReviewFormModal';
 import SingleBeerPage from "./components/SingleBeerPage/SingleBeerPage";
 
 function App() {
@@ -27,15 +26,12 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          {/* <Route exact path="/">
-            <SplashPage />
-          </Route> */}
+          
           <Route path="/signup">
             <SignupFormPage />
           </Route>
 
           <Route exact path="/beers">
-            <ReviewForm />
               <BeersPage isLoaded={isLoaded} />
           </Route>
 

@@ -32,7 +32,7 @@
     width: 50%;
 }
 
-.event-button {
+/* .event-button {
     cursor: pointer;
     margin-top: 14px;
     margin-right: 10px;
@@ -46,8 +46,32 @@
 }
 
 .event-button:hover {
-    background-color: black; /* Green */
+    background-color: black;
     color: white;
+} */
+
+.beers-list-button-div {
+    height: 60px;
+    color: white;
+    width: 140px;
+    background-color: rgba(250, 250, 250, 0);
+    border: solid 1.7px black;
+    border-radius: 4px;
+    box-shadow: 1px 1px black;
+    font-size: 1.2em;
+}
+
+.beers-list-button-div:hover {
+    background-color: black;
+    color: white;
+}
+
+.beers-list-button-container {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0);
+    margin-right: 2%;
+    
 }
 
 .signup-button {
@@ -62,7 +86,7 @@
 }
 
 .signup-button:hover {
-    background-color: black; /* Green */
+    background-color: black; 
     color: white;
 }
 

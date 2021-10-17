@@ -1,0 +1,142 @@
+/* .single-beer-main {
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+}
+
+#single-beer-upper {
+    position: relative;
+    bottom: 3.125rem;
+}
+
+
+.single-beer-container {
+    width: 80%;
+    box-sizing: border-box;
+    height: 85vh;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 6.25rem;
+    border-radius: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3.125rem;
+    overflow: auto;
+}
+
+
+.single-beer-upper {
+    color: black;
+    margin: 1.5em auto 2.5em auto;
+    font-size: 2.5em;
+}
+
+.beers-divider {
+    border: 2px solid rgb(182, 182, 182);
+    width: 100%;
+    background-color: rgb(182, 182, 182);
+    margin-bottom: 1.875rem;
+}
+
+.newBeers-card {
+    height: 11.813rem;
+    width: 38.75rem;
+    border: 2px dashed #a1a1a1;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 1.25rem;
+    background-color: white;
+    text-align: center;
+}
+
+.newBeers-card:hover {
+    background-color: rgb(230, 230, 230);
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.review-input-field {
+    background-color: white;
+    border: 1px solid rgb(126, 126, 126);
+    border-radius: 5px;
+    padding: 0.313em;
+    box-sizing: border-box;
+} */
+
+.reviews-container {
+    /* height: 11.813rem;
+    width: 38.75rem; */
+    border: 2px solid black;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 1.25rem;
+    background-color: white;
+    text-align: center;
+} 
+
+/*
+.li-main {
+    height: 11.813rem;
+    width: 38.75rem;
+    border: 2px solid black;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 1.25rem;
+    background-color: white;
+    text-align: center;
+
+}
+
+.review-buttons {
+    background-color: gray;
+    border-radius: 3px;
+    width: 8.75rem;
+    height: 3rem;
+    outline: 0;
+    color: white;
+    font-size: 1.25em;
+}
+
+.review-buttons:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+} */
+
+/* .github-logo {
+width: 1.875rem;
+height: 3.125rem;
+background-image: url('https://res.cloudinary.com/dxo7djnid/image/upload/v1634196156/uncappd/GitHub-logo-small_kbjvye.png');
+background-size: contain;
+background-position: center;
+background-repeat: no-repeat;
+}
+
+.linkedin-logo {
+width: 1.875rem;
+height: 3.125rem;
+background-image: url('https://res.cloudinary.com/dxo7djnid/image/upload/v1634196153/uncappd/LinkedIn_logo_small_rzrqri.png');
+background-size: contain;
+background-position: center;
+background-repeat: no-repeat;
+}
+
+.github-logo-text {
+margin-left: 0.313rem;
+font-size: 1.125rem;
+}
+
+.linkedin-link {
+margin-left: 1.125rem;
+} */

@@ -59,10 +59,11 @@ export const createReview = (newReview) => async dispatch => {
     const response = await csrfFetch('/api/reviews', {
       method: 'POST',
       body: JSON.stringify({
+        rating,
+        review,
         userId,
         beerId,
-        review,
-        rating,
+        
       })
     });
     
@@ -129,16 +130,16 @@ const reviewsReducer = (state = initialState, action) => {
             newState['myReviews'] = [];
             return newState;
         case POST_REVIEW:
-            newState['myReviews'] = [action.newReview, ...newState['myReviews']];
-            newState['allReviews'] = [action.newReview, ...newState['allReviews']];
+            const newReview = action.reviewToEdit;
+            newState.singleBeer.Reviews.unshift(newReview);
             return newState;
         case DELETE_REVIEW:
-            console.log('--------this is the BEFORE newState', newState)
+            // console.log('--------this is the BEFORE newState', newState)
             // const newMyReviews = newState['myReviews'].filter(review => review.id !== action.reviewToDestroy.id)
             // newState['myReviews'] = newMyReviews
             const destroyedReviewIdx = newState.singleBeer.Reviews.findIndex(review => review.id === action.reviewToDestroy.id)
             delete newState.singleBeer.Reviews[destroyedReviewIdx]
-            console.log('--------this is state AFTER delete', newState)
+            // console.log('--------this is state AFTER delete', newState)
             //
             return newState;
         case EDIT_REVIEW:
