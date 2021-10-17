@@ -20,11 +20,17 @@ const SingleBeerPage = ({ beer }) => {
     const [reviewId, setReviewId] = useState('');
     const [rating, setRating] = useState('');
     const [count, setCount] = useState(1);
+    const [count2, setCount2] = useState(1);
 
     useEffect(() => {
         dispatch(fetchOneBeer(id));
         return dispatch(fetchOneBeer(id))
     }, [dispatch, count])
+
+    useEffect(() => {
+        dispatch(fetchOneBeer(id));
+        return dispatch(fetchOneBeer(id))
+    }, [dispatch, count2])
 
     // console.log('-----this is the single beer from SingleBeerPage Component', singleBeer)
 
@@ -44,11 +50,10 @@ const SingleBeerPage = ({ beer }) => {
     }
 
 
-    const handleDeleteClick = () => {
-        // dispatch delete
-        dispatch(destroyReview(id))
-        // dispatch get all reviews
-        dispatch(getAllReviews(id))
+    const handleDeleteClick = (reviewId) => {
+        setCount2(prev => prev + 1)
+        return dispatch(destroyReview(reviewId))
+        // dispatch(getAllReviews(id))
     }
 
     const reviewUpdateHandler = (e) => {
@@ -93,7 +98,7 @@ const SingleBeerPage = ({ beer }) => {
                                     onClick={() => setUpdateClicked(true)}
                                 >Update Review</button>
                                 <button
-                                    onClick={handleDeleteClick}
+                                    onClick={() => handleDeleteClick(review.id)}
                                 >Delete Review</button>
                                 {(updateClicked) ? 
                                 (<div>

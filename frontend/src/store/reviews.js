@@ -134,9 +134,12 @@ const reviewsReducer = (state = initialState, action) => {
             return newState;
         case DELETE_REVIEW:
             console.log('--------this is the BEFORE newState', newState)
-            const newMyReviews = newState['myReviews'].filter(review => review.id !== action.reviewToDestroy.id)
-            newState['myReviews'] = newMyReviews
+            // const newMyReviews = newState['myReviews'].filter(review => review.id !== action.reviewToDestroy.id)
+            // newState['myReviews'] = newMyReviews
+            const destroyedReviewIdx = newState.singleBeer.Reviews.findIndex(review => review.id === action.reviewToDestroy.id)
+            delete newState.singleBeer.Reviews[destroyedReviewIdx]
             console.log('--------this is state AFTER delete', newState)
+            //
             return newState;
         case EDIT_REVIEW:
             const editedReview = action.reviewToEdit;
