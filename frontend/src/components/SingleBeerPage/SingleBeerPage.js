@@ -88,16 +88,14 @@ const SingleBeerPage = ({ beer }) => {
 
     return (
         <>
-            <div>HELLO FROM SINGLE BEER PAGE</div>
             <div className="single-beer-main" />
             <div className="single-beer-container">
-                <div id="single-beer-upper"></div>
                 <h1 className="single-beer-title" id="single-beer-main">{singleBeer?.name}</h1>
                 <div className="single-beer-description">Description: {singleBeer?.description}</div>
                 <div className="single-beer-abv">ABV: {singleBeer?.abv}%</div>
                 <div className="single-beer-ibu">IBUs: {singleBeer?.ibu}</div>
                 <div className="reviews-container">
-                    <div className="reviews-feed-container">
+                    <div className="add-review-container">
                     <button
                         className="review-buttons add-review-button"
                         onClick={() => setAddReviewClick(true)}
@@ -134,65 +132,73 @@ const SingleBeerPage = ({ beer }) => {
                                     </form>
                                 </div>) : null}
                     </div>
-                    
-                    {singleBeer?.Reviews?.map(review => (
-                        <li key={review.id} className="li-main">
-                            <span>
-                                {review?.User?.username}: 
-                            </span>
-                            <div className="displayed-rating-container">
-                                <span>Rating: {` `}</span>
-                                <span>{review?.rating}</span>
-                            </div>
-                            <p>
-                                {review?.review}
-                            </p>
-                            {(sessionUser?.id === review?.User?.id) ? 
-                            (<div className="review-buttons-container">
-                                <button
-                                    className="review-buttons update-review-button"
-                                    onClick={() => setUpdateClicked(true)}
-                                >Update Review</button>
-                                <button
-                                    className="review-buttons delete-review-button"
-                                    onClick={() => handleDeleteClick(review.id)}
-                                >Delete Review</button>
-                                {(updateClicked) ? 
+                    <div className="review-card">
+                        {singleBeer?.Reviews?.map(review => (
+                            <div key={review.id} className="li-main">
+                                <div className="username-and-rating-container">
+                                    <h2 className="username-div">
+                                        <span>
+                                            {review?.User?.username} 
+                                        </span>
+                                    </h2>
+                                    <h3 className="displayed-rating-container">
+                                        <span>Rating: {` `}</span>
+                                        <span>{review?.rating}</span>
+                                    </h3>
+                                    <div className="review-div">
+                                        {review?.review}
+                                    </div>
+                                
+                                </div>
+                                {(sessionUser?.id === review?.User?.id) ? 
                                 (<div>
-                                    <form className="update-review-form" onSubmit={reviewUpdateHandler}>
-                                        <select 
-                                            className="review-input-field rating-select"
-                                            name="rating"
-                                            value={rating}
-                                            onChange={(e) => setRating(e.target.value)}
-                                        >
-                                            <option value="" disabled>--Rating--</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                        <textarea
-                                        className="review-input-field review-textarea" 
-                                        type="text"
-                                        onChange={(e) => {
-                                            setReviewText(e.target.value)
-                                            setReviewId(review.id)
+                                    <div className="review-buttons-container">
+                                        <button
+                                            className="review-buttons update-review-button"
+                                            onClick={() => setUpdateClicked(true)}
+                                        >Update Review</button>
+                                        <button
+                                            className="review-buttons delete-review-button"
+                                            onClick={() => handleDeleteClick(review.id)}
+                                        >Delete Review</button>
+                                    </div>
+                                    {(updateClicked) ? 
+                                    (<div className="update-review-container">
+                                        <form className="update-review-form" onSubmit={reviewUpdateHandler}>
+                                            <select 
+                                                className="review-input-field rating-select"
+                                                name="rating"
+                                                value={rating}
+                                                onChange={(e) => setRating(e.target.value)}
+                                            >
+                                                <option value="" disabled>--Rating--</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                            <textarea
+                                            className="review-input-field review-textarea" 
+                                            type="text"
+                                            onChange={(e) => {
+                                                setReviewText(e.target.value)
+                                                setReviewId(review.id)
+                                                
+                                            }}
+                                            value={reviewText}
+                                            placeholder="Please make your update here"
+                                            name="review"
+                                            />
                                             
-                                        }}
-                                        value={reviewText}
-                                        placeholder="Please make your update here"
-                                        name="review"
-                                        />
-                                        
-                                        <button type="submit">Submit Update</button>
-                                    </form>
-                                </div>) : null}
-                            </div>) : null
-                            }
-                        </li>
-                    ))} 
+                                            <button type="submit">Submit Update</button>
+                                        </form>
+                                    </div>) : null}
+                                </div>) : null
+                                }
+                            </div>
+                        ))} 
+                    </div>
 
                 </div>
             </div>

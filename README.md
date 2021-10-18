@@ -22,7 +22,7 @@ https://uncappd-solo.herokuapp.com/
 * React
 * Redux
 * Heroku
-* Git/Github
+
 
 
 

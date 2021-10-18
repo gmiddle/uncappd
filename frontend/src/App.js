@@ -9,7 +9,8 @@ import Navigation from "./components/Navigation";
 import BeersPage from "./components/BeersPage";
 import BeerForm from "./components/BeerForm";
 import SingleBeerPage from "./components/SingleBeerPage/SingleBeerPage";
-import Footer from './components/Footer';
+import Splash from "./components/SplashPage";
+// import Footer from './components/Footer';
 
 
 function App() {
@@ -28,7 +29,11 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          
+
+          <Route exact path="/">
+            <Splash />
+          </Route>
+
           <Route path="/signup">
             <SignupFormPage />
           </Route>

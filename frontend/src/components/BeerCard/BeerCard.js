@@ -1,9 +1,9 @@
-import { useEffect, useRef } from 'react';
+// import { useEffect, useRef } from 'react';
 // import { useBeerSelected } from '../../context/BeerSelected';
 import "./BeerCard.css";
 
-const BeerCard = ({ beer, id, reviews, rating, ibu, abv }) => {
-    const beerImgRef = useRef();
+const BeerCard = ({ beer }) => {
+    // const beerImgRef = useRef();
     // const { setBeerSelected, setCurrentBeer, setShowReviewModal } = useBeerSelected();
     // console.log('---------this is the id', id)
     // TODO AVG RATING
@@ -18,20 +18,20 @@ const BeerCard = ({ beer, id, reviews, rating, ibu, abv }) => {
         }
     }
 
-    useEffect(() => {
-        beerImgRef.current.style.backgroundImage = `url(${beer.beerImg})`
-    })
+    // useEffect(() => {
+    //     beerImgRef.current.style.backgroundImage = `url(${beer.beerImg})`
+    // })
 
     return (
         <div className="beerCard-container">
-            <div ref={beerImgRef} className="beerCard-img">BEER IMAGE GOES HERE</div>
-            <div className="beerCard-divider"></div>
+            {/* <div ref={beerImgRef} className="beerCard-img">BEER IMAGE GOES HERE</div> */}
+            {/* <div className="beerCard-divider"></div> */}
             <div className="beerCard-content"></div>
                 <h1 className="beerCard-title">{beer.name}</h1>
                 <p className="beerCard-description">{beer.description}</p>
                 <div className="beerCard-info">
-                    <p className="beerCard-info beerCard-rating-avg">Rating: {beer?.Reviews?.length ? `${avgRating}/5` : 'No one has rated this brew yet.'}</p>
-                    <p className="beerCard-info beerCard-rating-total">Total Ratings: TBD</p>
+                    <p className="beerCard-info beerCard-rating-avg">Rating: {beer?.Reviews?.length ? `${avgRating}/5` : 'TBD'}</p>
+                    {/* <p className="beerCard-info beerCard-rating-total">Total Ratings: TBD</p> */}
                     <p className="beerCard-info beerCard-abv">ABV %: {beer.abv}</p>
                 </div>
         </div>

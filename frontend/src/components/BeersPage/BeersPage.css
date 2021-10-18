@@ -23,11 +23,12 @@
     box-sizing: border-box;
     height: 85vh;
     background-color: whitesmoke;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     margin: 0 auto;
     margin-top: 6.25rem;
     border-radius: 3px;
-    display: flex;
-    flex-wrap: wrap;
     padding: 3.125rem;
     overflow: auto;
 }
@@ -82,7 +83,6 @@
 }
 
 
-
 .new-beer-card:hover {
     background-color: gray;
     cursor: pointer;
@@ -103,3 +103,4 @@
     padding: 25px;
     margin-left: 10%;
 }
+

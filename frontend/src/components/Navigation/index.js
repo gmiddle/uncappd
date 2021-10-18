@@ -17,8 +17,8 @@ function Navigation({ isLoaded }){
     const demoLogin = async () => {
         setCredential("Demo-lition")
         setPassword("password")
+        history.push('/beers')
         return dispatch(sessionActions.login({ credential: "Demo-lition", password: "password" }))
-        .then(history.push('/beers'))
     }
 
     let sessionLinks;

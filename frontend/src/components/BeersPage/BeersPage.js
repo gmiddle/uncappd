@@ -43,7 +43,7 @@ const BeersPage = ({ beer }) => {
                 <div className="beer-card-list">
                     {sortedBeers.map(beer => (
                         <Link key={beer.id} to={`/beers/${beer.id}`}>
-                            <div className="beers-divider"></div>
+                            {/* <div className="beers-divider"></div> */}
                             <BeerCard key={beer.id} beer={beer} className="beer-card"/>
                         </Link>
                     ))}
