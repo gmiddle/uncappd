@@ -43,7 +43,7 @@ const BeersPage = ({ beer }) => {
                     <div className="plus-icon">+</div>
                 </div>
                 {sortedBeers.map(beer => (
-                    <Link to={`/beers/${beer.id}`}>
+                    <Link key={beer.id} to={`/beers/${beer.id}`}>
                         <BeerCard key={beer.id} beer={beer} />
                     </Link>
                 ))}

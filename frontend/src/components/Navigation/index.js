@@ -18,7 +18,7 @@ function Navigation({ isLoaded }){
         setCredential("Demo-lition")
         setPassword("password")
         return dispatch(sessionActions.login({ credential: "Demo-lition", password: "password" }))
-        .then(history.push('/beers/'))
+        .then(history.push('/beers'))
     }
 
     let sessionLinks;

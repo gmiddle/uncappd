@@ -136,7 +136,7 @@ const SingleBeerPage = ({ beer }) => {
                     </div>
                     
                     {singleBeer?.Reviews?.map(review => (
-                        <li className="li-main">
+                        <li key={review.id} className="li-main">
                             <span>
                                 {review?.User?.username}: 
                             </span>

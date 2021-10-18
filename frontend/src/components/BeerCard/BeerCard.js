@@ -5,7 +5,7 @@ import "./BeerCard.css";
 const BeerCard = ({ beer, id, reviews, rating, ibu, abv }) => {
     const beerImgRef = useRef();
     // const { setBeerSelected, setCurrentBeer, setShowReviewModal } = useBeerSelected();
-    console.log('---------this is the id', id)
+    // console.log('---------this is the id', id)
     // TODO AVG RATING
     let avgRating;
     const ratingsArray = [];
@@ -30,7 +30,7 @@ const BeerCard = ({ beer, id, reviews, rating, ibu, abv }) => {
                 <h1 className="beerCard-title">{beer.name}</h1>
                 <p className="beerCard-description">{beer.description}</p>
                 <div className="beerCard-info">
-                    <p className="beerCard-info beerCard-rating-avg">Rating: {beer?.Reviews?.length ? `${avgRating}/5` : 'N/A'}</p>
+                    <p className="beerCard-info beerCard-rating-avg">Rating: {beer?.Reviews?.length ? `${avgRating}/5` : 'No one has rated this brew yet.'}</p>
                     <p className="beerCard-info beerCard-rating-total">Total Ratings: TBD</p>
                     <p className="beerCard-info beerCard-abv">ABV %: {beer.abv}</p>
                 </div>
