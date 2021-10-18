@@ -35,15 +35,16 @@ const BeersPage = ({ beer }) => {
         <>
             <div className="beers-main" />
             {/* <Navigation isLoaded={isLoaded} /> */}
+            <h1 className="beers-title" id="beers-main">Beers List</h1>
             <div className="beers-feed-container">
                 <div id="beers-upper"></div>
-                <h1 className="beers-title" id="beers-main">Beers List</h1>
                 <div className="beers-divider"></div>
                 <div onClick={newBeer} className="new-beer-card">
                     <div className="plus-icon">+</div>
                 </div>
                 {sortedBeers.map(beer => (
                     <Link key={beer.id} to={`/beers/${beer.id}`}>
+                        <div className="beers-divider"></div>
                         <BeerCard key={beer.id} beer={beer} />
                     </Link>
                 ))}

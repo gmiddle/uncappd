@@ -9,6 +9,7 @@ import Navigation from "./components/Navigation";
 import BeersPage from "./components/BeersPage";
 import BeerForm from "./components/BeerForm";
 import SingleBeerPage from "./components/SingleBeerPage/SingleBeerPage";
+import Footer from './components/Footer';
 
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
           
         </Switch>
       )}
+      {/* <Footer /> */}
     </>
   );
 }

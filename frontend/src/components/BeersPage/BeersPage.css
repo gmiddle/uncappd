@@ -50,16 +50,18 @@
 }
 
 .beers-divider {
-    border: 2px solid rgb(182, 182, 182);
-    width: 100%;
-    background-color: rgb(182, 182, 182);
+    border: 2px solid gray;
+    justify-content: center;
+    width: 800px;
+    background-color: gray;
     margin-bottom: 1.875rem;
+    margin-top: 1.875rem;
 }
 
 .newBeers-card {
     height: 11.813rem;
     width: 38.75rem;
-    border: 2px dashed #a1a1a1;
+    border: 2px solid gray;
     border-radius: 3px;
     display: flex;
     align-items: center;
