@@ -8,12 +8,28 @@ a, a:hover, a:focus, a:active {
     color: inherit;
 }
 
-.footer{
-    margin-top: 1rem;
-    padding: 1rem;
-    background-color: rgb(235, 195, 64);
-    position: fixed;
-    bottom: 0;
-    left: 0;
+.footer-container {
+    display: flex;
+    justify-content: center;
+    height: 80px;
     width: 100%;
+    bottom: 0;
+    background-color: rgb(70, 70, 70);
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: rgb(70, 70, 70);
+}
+
+.linkedIn {
+    margin-right: 10px;
+    height: 32px;
+    width: 32px;
+}
+
+.github {
+    margin-right: 10px;
 }
