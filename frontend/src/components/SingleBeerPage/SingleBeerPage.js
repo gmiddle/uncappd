@@ -97,7 +97,7 @@ const SingleBeerPage = ({ beer }) => {
                 <div className="single-beer-abv">ABV: {singleBeer?.abv}%</div>
                 <div className="single-beer-ibu">IBUs: {singleBeer?.ibu}</div>
                 <div className="reviews-container">
-                    <div>
+                    <div className="reviews-feed-container">
                     <button
                         className="review-buttons add-review-button"
                         onClick={() => setAddReviewClick(true)}

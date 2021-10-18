@@ -68,7 +68,21 @@
     margin-top: 1.25rem;
     background-color: white;
     text-align: center;
-} 
+}
+
+.reviews-feed-container {
+    width: 80%;
+    box-sizing: border-box;
+    height: 85vh;
+    background-color: whitesmoke;
+    margin: 0 auto;
+    margin-top: 6.25rem;
+    border-radius: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3.125rem;
+    overflow: auto;
+}
 
 .li-main {
     height: 11.813rem;
