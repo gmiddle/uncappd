@@ -22,7 +22,7 @@
     width: 80%;
     box-sizing: border-box;
     height: 85vh;
-    background-color: whitesmoke;
+    background-color: lightgray;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
