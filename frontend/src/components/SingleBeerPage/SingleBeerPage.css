@@ -1,5 +1,4 @@
-/* .single-beer-main {
-    background-image: url('');
+.single-beer-main {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -57,26 +56,13 @@
     text-align: center;
 }
 
-.newBeers-card:hover {
-    background-color: rgb(230, 230, 230);
-    cursor: pointer;
-    transform: scale(1.02);
-}
-
-.review-input-field {
-    background-color: white;
-    border: 1px solid rgb(126, 126, 126);
-    border-radius: 5px;
-    padding: 0.313em;
-    box-sizing: border-box;
-} */
-
 .reviews-container {
-    /* height: 11.813rem;
-    width: 38.75rem; */
+    height: 11.813rem;
+    width: 38.75rem;
     border: 2px solid black;
     border-radius: 3px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     margin: 0 auto;
     margin-top: 1.25rem;
@@ -84,7 +70,6 @@
     text-align: center;
 } 
 
-/*
 .li-main {
     height: 11.813rem;
     width: 38.75rem;
@@ -96,47 +81,11 @@
     margin-top: 1.25rem;
     background-color: white;
     text-align: center;
-
+    
 }
 
-.review-buttons {
-    background-color: gray;
-    border-radius: 3px;
-    width: 8.75rem;
-    height: 3rem;
-    outline: 0;
-    color: white;
-    font-size: 1.25em;
-}
-
-.review-buttons:hover {
-    transform: scale(1.03);
+.li-main:hover {
+    background-color: rgb(230, 230, 230);
     cursor: pointer;
-} */
-
-/* .github-logo {
-width: 1.875rem;
-height: 3.125rem;
-background-image: url('https://res.cloudinary.com/dxo7djnid/image/upload/v1634196156/uncappd/GitHub-logo-small_kbjvye.png');
-background-size: contain;
-background-position: center;
-background-repeat: no-repeat;
+    transform: scale(1.02);
 }
-
-.linkedin-logo {
-width: 1.875rem;
-height: 3.125rem;
-background-image: url('https://res.cloudinary.com/dxo7djnid/image/upload/v1634196153/uncappd/LinkedIn_logo_small_rzrqri.png');
-background-size: contain;
-background-position: center;
-background-repeat: no-repeat;
-}
-
-.github-logo-text {
-margin-left: 0.313rem;
-font-size: 1.125rem;
-}
-
-.linkedin-link {
-margin-left: 1.125rem;
-} */

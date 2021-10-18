@@ -9,11 +9,14 @@
     z-index: -1;
 }
 
+.beers-title {
+    margin-left: 10%;
+}
+
 #beers-upper {
     position: relative;
     bottom: 3.125rem;
 }
-
 
 .beers-feed-container {
     width: 80%;
@@ -28,6 +31,13 @@
     padding: 3.125rem;
     overflow: auto;
 }
+
+.beer-card:hover {
+    background-color: rgb(230, 230, 230);
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
 
 .beers-feed-container::-webkit-scrollbar {
     background-color: lightgray;
@@ -71,47 +81,25 @@
     text-align: center;
 }
 
-.plus-icon {
-    font-size: 12.5em;
-    width: 100%;
-    text-align: center;
-    color:rgb(182, 182, 182);
-}
 
-.plus-icon:hover {
-    color: rgb(133, 133, 133);
-}
 
-.newBeers-card:hover {
-    background-color: rgb(230, 230, 230);
+.new-beer-card:hover {
+    background-color: gray;
     cursor: pointer;
     transform: scale(1.02);
 }
 
-
-/* .github-logo {
-width: 1.875rem;
-height: 3.125rem;
-background-image: url('https://res.cloudinary.com/dxo7djnid/image/upload/v1634196156/uncappd/GitHub-logo-small_kbjvye.png');
-background-size: contain;
-background-position: center;
-background-repeat: no-repeat;
+.new-beer-card {
+    font-size: 1.5em;
+    display: flex;
+    text-align: center;
+    height: 80px;
+    width: 200px;
+    display: flex;
+    color:black;
+    border: 2px solid gray;
+    border-radius: 3px;
+    background-color: lightgray;
+    padding: 25px;
+    margin-left: 10%;
 }
-
-.linkedin-logo {
-width: 1.875rem;
-height: 3.125rem;
-background-image: url('https://res.cloudinary.com/dxo7djnid/image/upload/v1634196153/uncappd/LinkedIn_logo_small_rzrqri.png');
-background-size: contain;
-background-position: center;
-background-repeat: no-repeat;
-}
-
-.github-logo-text {
-margin-left: 0.313rem;
-font-size: 1.125rem;
-}
-
-.linkedin-link {
-margin-left: 1.125rem;
-} */
